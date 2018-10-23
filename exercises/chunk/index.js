@@ -15,11 +15,20 @@
 //         if(!last  || last.length ==  size )
 //             chunked.push([elem])
 //         else    
-//             chunked[chunked.length - 1].push(elem)    
+//             last.push(elem)    
 //     }
 //     return chunked
 // }
-//sol2
+// //sol2
+// function chunk(array, size) {
+//     let chunked = []
+//     while(array.length > 0){
+//         chunked.push(array.splice(0, size))
+//     }
+//     return chunked
+// }
+
+//sol3
 function chunk(array, size) {
     let chunked = []
     while(array.length > 0){
