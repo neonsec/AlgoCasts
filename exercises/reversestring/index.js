@@ -12,8 +12,8 @@
  //sol 2
  function reverse(str) {
      let reverseStr = ""
-    for(var i= str.length-1; i>=0; i--)
-        reverseStr += str[i];       
+    for(let char of str)
+        reverseStr = char + reverseStr;       
     return reverseStr;
 }
 
