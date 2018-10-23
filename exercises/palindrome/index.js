@@ -6,9 +6,12 @@
 // --- Examples:
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
-
-function palindrome(str) {
-    return str === str.split("").reverse().join("")  
+//sol1
+// function palindrome(str) {
+//     return str === str.split("").reverse().join("")  
+// }
+//sol2
+function palindrome(str){
+    return str.split("").every((val, index) => val == str[str.length - index - 1])
 }
-
 module.exports = palindrome;
