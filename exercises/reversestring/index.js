@@ -10,12 +10,17 @@
 //     return str.split("").reverse().join("");
 // }
  //sol 2
- function reverse(str) {
-     let reverseStr = ""
-    for(let char of str)
-        reverseStr = char + reverseStr;       
-    return reverseStr;
-}
+//  function reverse(str) {
+//      let reverseStr = ""
+//     for(let char of str)
+//         reverseStr = char + reverseStr;       
+//     return reverseStr;
+// }
+//sol 3
 
+function reverse(str){
+    return str.split("").reduce((reversed, character)=> character.concat(reversed))
+    
+}
 
 module.exports = reverse;
