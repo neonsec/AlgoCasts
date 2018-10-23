@@ -7,17 +7,26 @@
 // chunk([1, 2, 3, 4, 5, 6, 7, 8], 3) --> [[ 1, 2, 3], [4, 5, 6], [7, 8]]
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
-
+//  sol1
+// function chunk(array, size) {
+//     let chunked = []
+//     for(var elem of array){
+//         let last = chunked[chunked.length - 1]
+//         if(!last  || last.length ==  size )
+//             chunked.push([elem])
+//         else    
+//             chunked[chunked.length - 1].push(elem)    
+//     }
+//     return chunked
+// }
+//sol2
 function chunk(array, size) {
     let chunked = []
-    for(var elem of array){
-        let last = chunked[chunked.length - 1]
-        if(!last  || last.length ==  size )
-            chunked.push([elem])
-        else    
-            chunked[chunked.length - 1].push(elem)    
+    while(array.length > 0){
+        chunked.push(array.splice(0, size))
     }
     return chunked
 }
+
 
 module.exports = chunk;
