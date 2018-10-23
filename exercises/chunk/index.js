@@ -31,8 +31,10 @@
 //sol3
 function chunk(array, size) {
     let chunked = []
-    while(array.length > 0){
-        chunked.push(array.splice(0, size))
+    let index = 0;
+    while(array.length > index){
+        chunked.push(array.slice(index, index+size))
+        index = index + size
     }
     return chunked
 }
